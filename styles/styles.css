@@ -1,0 +1,113 @@
+/* PT Sans */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/pt-sans-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/pt-sans-bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* PT Sans Narrow */
+@font-face {
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/pt-sans-narrow-bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #242424;
+  background-color: #fbf7f4;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background-color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Pages */
+.page-header {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.navigation-link {
+  font-family: "PT Sans Narrow", sans-serif;
+  line-height: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background-color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main-index {
+  color: #ffffff;
+  background-color: #000000;
+  background-image: url("../images/index-bg.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+/* List */
+.advantages-list {
+  text-align: center;
+}
+
+/* Title */
+.advantages-title {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 32px;
+  line-height: 35px;
+  text-transform: uppercase;
+}
+
+/* Index columns */
+.index-columns {
+  color: #242424;
+  background-color: #fbf7f4;
+  background-image: url("../images/bg-noisy.png");
+}
+
+/* Services*/
+.services {
+  text-transform: uppercase;
+}
+
+/* Title */
+.services-title {
+  font-size: 32px;
+  line-height: 35px;
+  font-weight: 700;
+}
+
+/* Price */
+.services-list {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.services-price {
+  color: #af7842;
+}
