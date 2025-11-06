@@ -2,7 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <title>Барбершоп «Бородинский»</title>
+  <title>Каталог | Барбершоп «Бородинский»</title>
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 <header class="page-header">
@@ -136,17 +137,19 @@
       </fieldset>
       <button class="button" type="submit">Показать</button>
     </form>
-    <select class="select-control" aria-label="Сортировка">
-      <option value="popular">Сначала популярное</option>
-      <option value="cheap">Сначала дешёвое</option>
-      <option value="expensive">Сначала дорогое</option>
-    </select>
-    <a href="#" class="button button-light">
-      <span class="visually-hidden">Показать список</span>
-    </a>
-    <a class="button" href="#">
-      <span class="visually-hidden">Показать карточки</span>
-    </a>
+    <div class="sorting-container">
+      <select class="select-control" aria-label="Сортировка">
+        <option value="popular">Сначала популярное</option>
+        <option value="cheap">Сначала дешёвое</option>
+        <option value="expensive">Сначала дорогое</option>
+      </select>
+      <a href="#" class="button button-light">
+        <span class="visually-hidden">Показать список</span>
+      </a>
+      <a class="button" href="#">
+        <span class="visually-hidden">Показать карточки</span>
+      </a>
+    </div>
     <ul class="product-list">
       <li class="product-card">
         <a class="product-card-link" href="product.html">
@@ -229,7 +232,8 @@
 <footer class="page-footer">
   <section class="footer-contacts">
     <h2 class="visually-hidden">Контакты</h2>
-    <img class="footer-contacts-logo" src="images/logo-footer.svg" width="184" height="22" alt="Логотип Барбершоп «Бородинский»">
+    <img class="footer-contacts-logo" src="images/logo-footer.svg" width="184" height="22"
+         alt="Логотип Барбершоп «Бородинский»">
     <address class="footer-contacts-address">
       <p class="about-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
       <a class="footer-contacts-address-phone" href="tel:+78005558628">+7 800 555-86-28</a>
