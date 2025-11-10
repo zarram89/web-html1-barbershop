@@ -25,7 +25,15 @@
 }
 
 /* Common */
+html {
+  height: 100%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
   font-family: "PT Sans", sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -58,6 +66,24 @@ body {
   background-color: #000000;
 }
 
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+  margin: 0 auto;
+}
+
+.navigation-list {
+  width: 430px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-user {
+  max-width: 250px;
+  margin-left: auto;
+}
+
 .navigation-link {
   font-family: "PT Sans Narrow", sans-serif;
   line-height: 22px;
@@ -69,6 +95,15 @@ body {
   text-transform: uppercase;
 }
 
+.navigation-logo {
+  width: 140px;
+  margin-right: 100px;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
 .main-index {
   color: #ffffff;
   background-color: #000000;
@@ -77,10 +112,30 @@ body {
   background-repeat: no-repeat;
 }
 
+.page-container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
 /* Advantages */
 /* List */
 .advantages-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  color: #ffffff;
+}
+
+/* Item */
+.advantages-item {
+  width: 277px;
 }
 
 /* Title */
@@ -93,6 +148,9 @@ body {
 
 /* Index columns */
 .index-columns {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
   color: #242424;
   background-color: #fbf7f4;
   background-image: url("../images/bg-noisy.png");
@@ -100,6 +158,7 @@ body {
 
 /* Services */
 .services {
+  width: 390px;
   text-transform: uppercase;
 }
 
@@ -122,6 +181,10 @@ body {
 }
 
 /* Gallery */
+.gallery {
+  width: 390px;
+}
+
 /* Title */
 .gallery-title {
   font-size: 32px;
@@ -132,6 +195,7 @@ body {
 
 /* Contacts */
 .contacts {
+  width: 350px;
   font-weight: 700;
 }
 
@@ -165,6 +229,10 @@ body {
 }
 
 /* Appointment */
+.appointment {
+  width: 430px;
+}
+
 /* Title */
 .appointment-title {
   font-size: 32px;
@@ -195,6 +263,12 @@ body {
   background-repeat: repeat;
 }
 
+.page-footer-container {
+  display: flex;
+  width: 940px;
+  margin: 0 auto;
+}
+
 .page-footer a {
   color: #ffffff;
 }
@@ -211,6 +285,11 @@ body {
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
+}
+
+.footer-contacts {
+  width: 200px;
+  margin-right: 130px;
 }
 
 .footer-contacts-address {
@@ -243,6 +322,11 @@ body {
   text-transform: uppercase;
 }
 
+.footer-social {
+  margin-left: auto;
+  max-width: 190px;
+}
+
 /* Inner Page */
 .inner-header-title {
   font-size: 32px;
@@ -260,7 +344,21 @@ body {
   color: inherit;
 }
 
+/* Catalog */
+.catalog-products {
+  display: flex;
+}
+
 /* Filter */
+.catalog-filter {
+  width: 220px;
+  margin-right: 20px;
+}
+
+.catalog-right-column {
+  width: 700px;
+}
+
 /* Title */
 .catalog-filter-title {
   font-size: 20px;
