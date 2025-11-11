@@ -1,46 +1,37 @@
-const cartButton = document.querySelector(".navigation-link-cart");
-const popover = document.querySelector(".popover");
-const closeButton = document.querySelector(".popover-close-button");
+import { onEsc, onClickOutside } from "./utils.js";
 
-function openPopover() {
-  popover.classList.add("popover-open");
-  document.addEventListener("keydown", onEscPress);
-  document.addEventListener("click", onClickOutside);
-}
+export function initPopover() {
+  const cartButton = document.querySelector(".navigation-link-cart");
+  const popover = document.querySelector(".popover");
+  const closeButton = popover.querySelector(".popover-close-button");
 
-function closePopover() {
-  popover.classList.remove("popover-open");
-  document.removeEventListener("keydown", onEscPress);
-  document.removeEventListener("click", onClickOutside);
-}
+  if (!cartButton || !popover) return;
 
-function togglePopover() {
-  if (popover.classList.contains("popover-open")) {
-    closePopover();
-  } else {
-    openPopover();
+  let escHandler;
+  let clickOutsideHandler;
+
+  function openPopover() {
+    popover.classList.add("popover-open");
+
+    escHandler = onEsc(closePopover);
+    clickOutsideHandler = onClickOutside(popover, closePopover);
+
+    document.addEventListener("keydown", escHandler);
+    document.addEventListener("click", clickOutsideHandler);
   }
-}
 
-function onEscPress(evt) {
-  if (evt.key === "Escape") {
-    closePopover();
+  function closePopover() {
+    popover.classList.remove("popover-open");
+
+    document.removeEventListener("keydown", escHandler);
+    document.removeEventListener("click", clickOutsideHandler);
   }
-}
 
-function onClickOutside(evt) {
-  const isClickInside = popover.contains(evt.target) || cartButton.contains(evt.target);
-  if (!isClickInside) {
-    closePopover();
+  function togglePopover(evt) {
+    evt.preventDefault();
+    popover.classList.contains("popover-open") ? closePopover() : openPopover();
   }
+
+  cartButton.addEventListener("click", togglePopover);
+  closeButton.addEventListener("click", closePopover);
 }
-
-cartButton.addEventListener("click", (evt) => {
-  evt.preventDefault(); // Чтобы убрать переход по ссылке "#"
-  togglePopover();
-});
-
-closeButton.addEventListener("click", (evt) => {
-  evt.preventDefault();
-  closePopover();
-});
