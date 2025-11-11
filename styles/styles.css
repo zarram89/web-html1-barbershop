@@ -558,10 +558,21 @@ body {
   gap: 19px 17px;
 }
 
-.field-group {
+.appointment .field-group,
+.newsletter .field-group {
   display: flex;
   flex-direction: column;
   margin: 0;
+}
+
+.appointment-form-name {
+  grid-column: 1 / -1;
+}
+
+.appointment-submit {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 9px;
 }
 
 .appointment-form  .info {
@@ -573,7 +584,9 @@ body {
   display: block;
 }
 
+/* Label */
 .form-label {
+  margin-bottom: 8px;
   line-height: 24px;
   font-weight: 700;
   text-transform: uppercase;
@@ -583,13 +596,66 @@ body {
   color: #595959;
 }
 
-.appointment-form-name {
-  grid-column: 1 / -1;
+.form-label-icon {
+  position: relative;
+  padding-right: 16px;
 }
 
-.appointment-submit {
-  grid-column: 1 / -1;
-  justify-self: start;
+.info {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  margin-left: 2px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  background-image: url("../images/info.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Field */
+.field {
+  margin: 0;
+  padding: 8px 14px;
+  font: inherit;
+  font-weight: 700;
+  background-color: #ffffff;
+  border: 2px solid #242424;
+}
+
+/* Hover, Focus */
+.field:hover,
+.field:focus {
+  border-color: #af7842;
+}
+
+.field:focus {
+  outline: 2px solid #dbb590;
+}
+
+/* Disabled */
+.field:disabled,
+.field:disabled:hover {
+  color: #595959;
+  background-color: #dbb590;
+  border-color: #595959;
+}
+
+/* Invalid */
+.field:invalid {
+  box-shadow: none;
+}
+
+.field:focus:invalid {
+  border-color: #ea5454;
+}
+
+/* Placeholder */
+.field::placeholder {
+  color: #dbdbdb;
+  opacity: 1;
 }
 
 /* Footer */
@@ -675,6 +741,15 @@ body {
   text-transform: uppercase;
 }
 
+.newsletter-email {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.newsletter-email .field {
+  width: 192px;
+}
+
 .newsletter-form {
   display: flex;
 }
@@ -739,6 +814,10 @@ body {
 }
 
 /* Inner Page */
+.inner-header {
+  margin-bottom: 32px;
+}
+
 .inner-header-title {
   margin-top: 0;
   margin-bottom: 16px;
@@ -793,12 +872,19 @@ body {
   margin-right: 20px;
 }
 
+.catalog-filter-group {
+  margin: 0 0 40px;
+  padding: 0;
+  border: none;
+}
+
 .catalog-right-column {
   width: 700px;
 }
 
 /* Title */
 .catalog-filter-title {
+  margin-bottom: 22px;
   font-size: 20px;
   line-height: 28px;
   font-weight: 700;
@@ -806,9 +892,150 @@ body {
   text-transform: uppercase;
 }
 
+/* Range */
+.range-scale {
+  position: relative;
+  height: 4px;
+  margin-bottom: 16px;
+  background-color: #242424;
+  border-radius: 2px;
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #af7842;
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border: 2px solid #242424;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-toggle:hover {
+  background-color: #dbb590;
+}
+
+.range-toggle:active,
+.range-toggle:focus {
+  outline: 3px solid #dbb590;
+}
+
+.toggle-min {
+  top: -8px;
+  left: -10px;
+}
+
+.toggle-max {
+  top: -8px;
+  right: -10px;
+}
+
+.range-wrapper-inputs {
+  display: flex;
+  justify-content: center;
+}
+
+.catalog-filter-label {
+  display: flex;
+  margin-right: 5px;
+}
+
+.range-input {
+  width: 30px;
+  padding: 0 2px;
+  font: inherit;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  appearance: textfield;
+}
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Control */
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+
+/* Mark */
+.control-mark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #242424;
+}
+
+.control:hover .control-mark {
+  border-color: #814b18;
+}
+
+.control-input:disabled + .control-mark {
+  border-color: #242424;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before,
+.control-input[type="checkbox"]:checked + .control-mark::after {
+  position: absolute;
+  top: 7px;
+  left: 2px;
+  width: 12px;
+  height: 2px;
+  background-color: #242424;
+  content: "";
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  transform: rotate(45deg);
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::after {
+  transform: rotate(-45deg);
+}
+
+/* Radio */
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: #242424;
+  border-radius: 50%;
+  content: "";
+}
+
 /* Label */
 .control-label {
+  line-height: 22px;
   font-weight: 700;
+}
+
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.catalog-filter-item:not(:last-child) {
+  margin-bottom: 16px;
 }
 
 .sorting-container {
@@ -817,6 +1044,37 @@ body {
   padding: 16px;
   color: #000000;
   background-color: #ffffff;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 260px;
+  margin-right: auto;
+}
+
+/* Control */
+.select-control {
+  width: 100%;
+  padding: 8px 48px 8px 14px;
+  font: inherit;
+  font-weight: 700;
+  background-color: #ffffff;
+  border: 2px solid #242424;
+  background-image: url("../images/select-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  appearance: none;
+}
+
+.select-control:hover,
+.select-control:focus {
+  border-color: #af7842;
+}
+
+.select-control:focus {
+  outline: 2px solid #dbb590;
 }
 
 .sorting-type {
@@ -841,22 +1099,30 @@ body {
   background-color: #4e2e0e;
 }
 
-.card-grid-toggle svg {
-  fill: #ffffff;
-}
-
 .card-grid-toggle:hover svg,
 .card-grid-toggle:focus svg {
   fill: #ffffff;
 }
 
+
+.card-grid-toggle svg {
+  fill: #ffffff;
+}
+
 .card-grid-toggle-current {
-  color: #242424;
   background-color: #ffffff;
+}
+
+.card-grid-toggle-current:hover {
+  background-color: #000000;
 }
 
 .card-grid-toggle-current svg {
   fill: #000000;
+}
+
+.card-grid-toggle-current:hover svg {
+  fill: #ffffff;
 }
 
 /* Products */

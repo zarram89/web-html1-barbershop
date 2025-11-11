@@ -169,7 +169,7 @@
               <button class="info">
                 <span class="visually-hidden">Посмотреть дополнительную информацию</span></button>
             </label>
-            <input type="text" id="appointment-date" name="appointment-date" placeholder="01.01.2020">
+            <input class="field" type="text" id="appointment-date" name="appointment-date" placeholder="01.01.2020">
           </p>
           <p class="field-group appointment-form-time">
             <label class="form-label" for="appointment-time">
@@ -178,7 +178,7 @@
                 <span class="visually-hidden">Посмотреть дополнительную информацию</span>
               </button>
             </label>
-            <input type="text" id="appointment-time" name="appointment-time" placeholder="10:00">
+            <input class="field" type="text" id="appointment-time" name="appointment-time" placeholder="10:00">
           </p>
           <p class="field-group appointment-form-phone">
             <label class="form-label" for="appointment-phone">
@@ -191,7 +191,7 @@
             <label class="form-label" for="appointment-name">
               Ваше имя
             </label>
-            <input class="field" type="text" id="appointment-name" name="appointment-name">
+            <input class="field" type="text" id="appointment-name" name="appointment-name" required>
           </p>
           <button class="button appointment-submit" type="submit">Записаться</button>
         </form>
@@ -214,7 +214,7 @@
     <section class="newsletter">
       <h2 class="page-footer-title">Получайте лучшие предложения</h2>
       <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
-        <label for="newsletter-email">Email</label>
+        <label class="visually-hidden" for="newsletter-email">Email</label>
         <input class="field" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email"
                required>
         <button class="button newsletter-button" type="submit">

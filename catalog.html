@@ -73,74 +73,102 @@
       <h2 class="visually-hidden" hidden="">Список товаров с фильтрами</h2>
       <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
         <fieldset class="catalog-filter-group">
-          <legend>Производители</legend>
+          <legend class="catalog-filter-title">Цена:</legend>
+
+          <div class="range">
+            <div class="range-scale">
+              <div class="range-bar" style="left: 42px; width: 136px">
+                <button class="range-toggle toggle-min">
+                  <span class="visually-hidden">Изменить минимальную цену</span>
+                </button>
+                <button class="range-toggle toggle-max">
+                  <span class="visually-hidden">Изменить максимальную цену</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="range-wrapper-inputs">
+              <label class="catalog-filter-label">
+                от <input class="range-input" type="number" value="50" name="min-price"> ₽
+              </label>
+              <label class="catalog-filter-label">
+                до <input class="range-input" type="number" value="1500" name="max-price" style="width: 37px"> ₽
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="catalog-filter-group">
+          <legend class="catalog-filter-title">Производители</legend>
           <ul class="catalog-filter-list">
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="bed-head-for-men">
-
-                Bed Head for Men
+                <input class="visually-hidden control-input" type="checkbox" name="bed-head-for-men" checked>
+                <span class="control-mark"></span>
+                <span class="control-label">Bed Head for Men</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="homme-deep-cleansing-cool" checked>
-
-                Homme Deep Cleansing Cool
+                <input class="visually-hidden control-input" type="checkbox" name="homme-deep-cleansing-cool">
+                <span class="control-mark"></span>
+                <span class="control-label">Homme Deep Cleansing Cool</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="so-intense" checked>
-
-                So Intense
+                <input class="visually-hidden control-input" type="checkbox" name="so-intense">
+                <span class="control-mark"></span>
+                <span class="control-label">So Intense</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="sprekenhus">
-
-                Sprekenhus
+                <input class="visually-hidden control-input" type="checkbox" name="sprekenhus">
+                <span class="control-mark"></span>
+                <span class="control-label">Sprekenhus</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="firm-storе">
-
-                Firm Storе
+                <input class="visually-hidden control-input" type="checkbox" name="firm-storе">
+                <span class="control-mark"></span>
+                <span class="control-label">Firm Storе</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="winter-body" checked>
-
-                Winter Body
+                <input class="visually-hidden control-input" type="checkbox" name="winter-body">
+                <span class="control-mark"></span>
+                <span class="control-label">Winter Body</span>
               </label>
             </li>
           </ul>
         </fieldset>
+
         <fieldset class="catalog-filter-group">
           <legend class="catalog-filter-title">Группы товаров</legend>
           <ul class="catalog-filter-list">
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="radio" name="product-group" value="shaving-supplies">
-
-                Бритвенные принадлежности
+                <input class="visually-hidden control-input" type="radio" name="product-group" value="shaving-supplies"
+                       checked>
+                <span class="control-mark"></span>
+                <span class="control-label">Бритвенные принадлежности</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="radio" name="product-group" value="care-products" checked>
-
-                Средства для ухода
+                <input class="visually-hidden control-input" type="radio" name="product-group" value="care-products">
+                <span class="control-mark"></span>
+                <span class="control-label">Средства для ухода</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="radio" name="product-group" value="accessories">
-
-                Аксессуары
+                <input class="visually-hidden control-input" type="radio" name="product-group" value="accessories">
+                <span class="control-mark"></span>
+                <span class="control-label">Аксессуары</span>
               </label>
             </li>
           </ul>
@@ -149,11 +177,13 @@
       </form>
       <div class="catalog-right-column">
         <div class="sorting-container">
-          <select class="select sorting-type" aria-label="Сортировка">
-            <option value="popular">Сначала популярное</option>
-            <option value="cheap">Сначала дешёвое</option>
-            <option value="expensive">Сначала дорогое</option>
-          </select>
+          <div class="select sorting-type">
+            <select class="select-control sorting-type" aria-label="Сортировка">
+              <option value="popular">Сначала популярное</option>
+              <option value="cheap">Сначала дешёвое</option>
+              <option value="expensive">Сначала дорогое</option>
+            </select>
+          </div>
           <a href="#" class="card-grid-toggle">
             <svg width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 16 16">
