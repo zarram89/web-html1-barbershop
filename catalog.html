@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Каталог | Барбершоп «Бородинский»</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 <header class="page-header">
   <nav class="navigation">
     <a class="navigation-logo" href="index.html">
-      <img class="page-header-logo" src="images/logo.svg" width="138" height="16" alt="Логотип барбершоп «Бородинский»">
+      <img class="page-header-logo" alt="Логотип барбершоп «Бородинский»" src="images/logo.svg" width="140" height="18">
     </a>
     <ul class="navigation-list">
       <li class="navigation-item">
@@ -48,16 +49,18 @@
           <svg class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="16"
                xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M8 8a3 3 0 100-6 3 3 0 000 6zm0 2a6 6 0 00-6 6h12a6 6 0 00-6-6z"></path>
+                  d="M8 8a3 3 0 100-6 3 3 0 000 6zm0 2a6 6 0 00-6 6h12a6 6 0 00-6-6z"/>
           </svg>
-          <span class="visually-hidden">Профиль</span>
         </a>
       </li>
     </ul>
   </nav>
 </header>
-<main class="main-container main-inner">
+
+<main class="main-inner main-container">
   <div class="page-container">
+
+    <!-- Шапка -->
     <header class="inner-header">
       <h1 class="inner-header-title">Каталог</h1>
       <ul class="breadcrumbs">
@@ -69,107 +72,140 @@
         </li>
       </ul>
     </header>
+
     <section class="catalog-products">
-      <h2 class="visually-hidden" hidden="">Список товаров с фильтрами</h2>
+      <h2 class="visually-hidden">Список товаров с фильтрами</h2>
+      <!-- Фильтрация -->
       <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
         <fieldset class="catalog-filter-group">
-          <legend>Производители</legend>
+          <legend class="catalog-filter-title">Цена:</legend>
+
+          <div class="range">
+            <div class="range-scale">
+              <div class="range-bar" style="left: 42px; width: 136px">
+                <button class="range-toggle toggle-min" type="button">
+                  <span class="visually-hidden">Изменить минимальную цену</span>
+                </button>
+                <button class="range-toggle toggle-max" type="button">
+                  <span class="visually-hidden">Изменить максимальную цену</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="range-wrapper-inputs">
+              <label class="catalog-filter-label">
+                от <input class="range-input" type="number" value="50" name="min-price"> ₽
+              </label>
+              <label class="catalog-filter-label">
+                до <input class="range-input" type="number" value="1500" name="max-price" style="width: 37px"> ₽
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="catalog-filter-group">
+          <legend class="catalog-filter-title">Производители</legend>
           <ul class="catalog-filter-list">
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="bed-head-for-men">
-
-                Bed Head for Men
+                <input class="visually-hidden control-input" type="checkbox" name="bed-head-for-men" checked>
+                <span class="control-mark"></span>
+                <span class="control-label">Bed Head for Men</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="homme-deep-cleansing-cool" checked>
-
-                Homme Deep Cleansing Cool
+                <input class="visually-hidden control-input" type="checkbox" name="homme-deep-cleansing-cool">
+                <span class="control-mark"></span>
+                <span class="control-label">Homme Deep Cleansing Cool</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="so-intense" checked>
-
-                So Intense
+                <input class="visually-hidden control-input" type="checkbox" name="so-intense">
+                <span class="control-mark"></span>
+                <span class="control-label">So Intense</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="sprekenhus">
-
-                Sprekenhus
+                <input class="visually-hidden control-input" type="checkbox" name="sprekenhus">
+                <span class="control-mark"></span>
+                <span class="control-label">Sprekenhus</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="firm-storе">
-
-                Firm Storе
+                <input class="visually-hidden control-input" type="checkbox" name="firm-storе">
+                <span class="control-mark"></span>
+                <span class="control-label">Firm Storе</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="checkbox" name="winter-body" checked>
-
-                Winter Body
+                <input class="visually-hidden control-input" type="checkbox" name="winter-body">
+                <span class="control-mark"></span>
+                <span class="control-label">Winter Body</span>
               </label>
             </li>
           </ul>
         </fieldset>
+
         <fieldset class="catalog-filter-group">
           <legend class="catalog-filter-title">Группы товаров</legend>
           <ul class="catalog-filter-list">
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="radio" name="product-group" value="shaving-supplies">
-
-                Бритвенные принадлежности
+                <input class="visually-hidden control-input" type="radio" name="product-group" value="shaving-supplies" checked>
+                <span class="control-mark"></span>
+                <span class="control-label">Бритвенные принадлежности</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="radio" name="product-group" value="care-products" checked>
-
-                Средства для ухода
+                <input class="visually-hidden control-input" type="radio" name="product-group" value="care-products">
+                <span class="control-mark"></span>
+                <span class="control-label">Средства для ухода</span>
               </label>
             </li>
             <li class="catalog-filter-item">
               <label class="control">
-                <input class="control-input" type="radio" name="product-group" value="accessories">
-
-                Аксессуары
+                <input class="visually-hidden control-input" type="radio" name="product-group" value="accessories">
+                <span class="control-mark"></span>
+                <span class="control-label">Аксессуары</span>
               </label>
             </li>
           </ul>
         </fieldset>
         <button class="button" type="submit">Показать</button>
       </form>
+
       <div class="catalog-right-column">
+        <!-- Сортировка -->
         <div class="sorting-container">
-          <select class="select sorting-type" aria-label="Сортировка">
-            <option value="popular">Сначала популярное</option>
-            <option value="cheap">Сначала дешёвое</option>
-            <option value="expensive">Сначала дорогое</option>
-          </select>
+          <div class= "select sorting-type">
+            <select class="select-control" aria-label="Сортировка">
+              <option value="popular">Сначала популярное</option>
+              <option value="cheap">Сначала дешёвое</option>
+              <option value="expensive">Сначала дорогое</option>
+            </select>
+          </div>
+
           <a href="#" class="card-grid-toggle">
-            <svg width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 16 16">
-              <path
-                d="M2 0a2 2 0 100 4 2 2 0 000-4zm0 6a2 2 0 100 4 2 2 0 000-4zm-2 8a2 2 0 114 0 2 2 0 01-4 0zM7 1a1 1 0 000 2h8a1 1 0 100-2H7zM6 8a1 1 0 011-1h8a1 1 0 110 2H7a1 1 0 01-1-1zm1 5a1 1 0 100 2h8a1 1 0 100-2H7z"/>
-            </svg>
             <span class="visually-hidden">Показать список</span>
+            <svg width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+              <path d="M2 0a2 2 0 100 4 2 2 0 000-4zm0 6a2 2 0 100 4 2 2 0 000-4zm-2 8a2 2 0 114 0 2 2 0 01-4 0zM7 1a1 1 0 000 2h8a1 1 0 100-2H7zM6 8a1 1 0 011-1h8a1 1 0 110 2H7a1 1 0 01-1-1zm1 5a1 1 0 100 2h8a1 1 0 100-2H7z" />
+            </svg>
           </a>
           <a href="#" class="card-grid-toggle card-grid-toggle-current">
-            <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M0 2a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm6 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0ZM0 8a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm-8 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0Zm2 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm10 0a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/>
-            </svg>
             <span class="visually-hidden">Показать карточки</span>
+            <svg width="16" height="16" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+              <path d="M0 2a2 2 0 114 0 2 2 0 01-4 0zm6 0a2 2 0 114 0 2 2 0 01-4 0zm10 0a2 2 0 10-4 0 2 2 0 004 0zM0 8a2 2 0 114 0 2 2 0 01-4 0zm10 0a2 2 0 10-4 0 2 2 0 004 0zm2 0a2 2 0 114 0 2 2 0 01-4 0zm-8 6a2 2 0 10-4 0 2 2 0 004 0zm2 0a2 2 0 114 0 2 2 0 01-4 0zm10 0a2 2 0 10-4 0 2 2 0 004 0z" />
+            </svg>
           </a>
         </div>
+
+        <!-- Список товаров -->
         <ul class="product-list">
           <li class="product-card">
             <a class="product-card-image-link" href="product.html">
@@ -244,6 +280,8 @@
             </div>
           </li>
         </ul>
+
+        <!-- Пагинация -->
         <div class="pagination-container">
           <ul class="pagination">
             <li class="pagination-item">
@@ -282,10 +320,9 @@
   <div class="page-footer-container">
     <section class="footer-contacts">
       <h2 class="visually-hidden">Контакты</h2>
-      <img class="footer-contacts-logo" src="images/logo-footer.svg" width="184" height="22"
-           alt="Логотип Барбершоп «Бородинский»">
+      <img class="footer-contacts-logo" src="images/logo-footer.svg" width="187" height="24" alt="Логотип Барбершоп «Бородинский»">
       <address class="footer-contacts-address">
-        <p class="about-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
+        <p class="footer-about-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
         <a class="footer-contacts-address-phone" href="tel:+78005558628">+7 800 555-86-28</a>
       </address>
       <a class="footer-contacts-map-link" href="#">Как нас найти?</a>
@@ -293,9 +330,10 @@
     <section class="newsletter">
       <h2 class="page-footer-title">Получайте лучшие предложения</h2>
       <form class="newsletter-form" action="https://echo.htmlacademy.ru/" method="post">
-        <label for="newsletter-email">Email</label>
-        <input class="field" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email"
-               required>
+        <p class="newsletter-email field-group">
+          <label class="visually-hidden" for="newsletter-email">Email</label>
+          <input class="field" placeholder="email@example.com" type="email" name="newsletter-email" id="newsletter-email" required>
+        </p>
         <button class="button newsletter-button" type="submit">
           <span class="visually-hidden">Отправить</span>
         </button>
@@ -320,7 +358,7 @@
           </a>
         </li>
       </ul>
-      <p class="about-text">Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a></p>
+      <p>Сделано в <a class="htmlacademy-link" href="https://htmlacademy.ru/">.html academy</a></p>
     </section>
   </div>
 </footer>
