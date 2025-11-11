@@ -1,4 +1,4 @@
-import { onEsc, onClickOutside } from "./utils.js";
+import { onEsc } from "./utils.js";
 
 export function initPopover() {
   const cartButton = document.querySelector(".navigation-link-cart");
@@ -14,7 +14,14 @@ export function initPopover() {
     popover.classList.add("popover-open");
 
     escHandler = onEsc(closePopover);
-    clickOutsideHandler = onClickOutside(popover, closePopover);
+
+    clickOutsideHandler = function(evt) {
+      // ✅ если клик по кнопке — не закрываем
+      const isClickInside = popover.contains(evt.target) || cartButton.contains(evt.target);
+      if (!isClickInside) {
+        closePopover();
+      }
+    };
 
     document.addEventListener("keydown", escHandler);
     document.addEventListener("click", clickOutsideHandler);
