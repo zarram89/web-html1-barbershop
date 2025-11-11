@@ -31,7 +31,7 @@
         </a>
       </li>
       <li class="navigation-item">
-        <a class="navigation-link" href="#">
+        <a class="navigation-link navigation-link-cart" href="#">
           <svg class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="16"
                xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -39,15 +39,44 @@
           </svg>
           <span class="visually-hidden">Корзина</span>
         </a>
+        <div class="popover popover-cart">
+          <button class="popover-close-button button button-light">
+            2
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+          <div class="popover-content">
+            <h2 class="popover-title">Корзина</h2>
+            <ul class="cart-items-list">
+              <li class="cart-item">
+                <p class="cart-item-title">Стрижка машинкой</p>
+                <p class="cart-item-price">800 ₽</p>
+                <button type="button" class="cart-item-button button">
+                  <svg width="16" height="16" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.42 1l.283-.496L3.991 0H12.01l.288.504.283.496h3.049l-.136 1.12-1.577 13-.107.88H2.191l-.107-.88-1.577-13L.371 1H3.42zm.543 13L2.629 3H13.37l-1.334 11H3.963zm5.04-9.071l-.5 7 1.995.142.5-7-1.995-.142zm-3.5 7.142l-.5-7 1.994-.142.5 7-1.994.142z" />
+                  </svg>
+                  <span class="visually-hidden">Удалить из корзины</span>
+                </button>
+              </li>
+              <li class="cart-item">
+                <p class="cart-item-title">Стрижка усов</p>
+                <p class="cart-item-price">1200 ₽</p>
+                <button class="cart-item-button button" type="button">
+                  <svg width="16" height="16" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.42 1l.283-.496L3.991 0H12.01l.288.504.283.496h3.049l-.136 1.12-1.577 13-.107.88H2.191l-.107-.88-1.577-13L.371 1H3.42zm.543 13L2.629 3H13.37l-1.334 11H3.963zm5.04-9.071l-.5 7 1.995.142.5-7-1.995-.142zm-3.5 7.142l-.5-7 1.994-.142.5 7-1.994.142z" />
+                  </svg>
+                  <span class="visually-hidden">Удалить из корзины</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </li>
       <li class="navigation-item">
-        <a class="navigation-link" href="#">
-          <svg class="navigation-icon" aria-hidden="true" focusable="false" width="16" height="16"
-               xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M8 8a3 3 0 100-6 3 3 0 000 6zm0 2a6 6 0 00-6 6h12a6 6 0 00-6-6z"></path>
+        <a class="navigation-link navigation-link-login" href="#">
+          <svg class="navigation-icon" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 2h5v12H9v2h7V0H9v2zM4.293 3.707L7.536 6.95H0v2h7.536l-3.243 3.242 1.414 1.415 4.95-4.95.707-.707-.707-.707-4.95-4.95-1.414 1.414z" fill="#BDBDBD" />
           </svg>
-          <span class="visually-hidden">Профиль</span>
+          Вход
         </a>
       </li>
     </ul>
@@ -245,5 +274,6 @@
     </section>
   </div>
 </footer>
+<script src="scripts/main.js" type="module"></script>
 </body>
 </html>
