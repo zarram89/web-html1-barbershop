@@ -1,28 +1,32 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import svgSprite from "vite-plugin-svg-sprite";
 
-export default defineConfig({
-  root: "src",
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
 
-  // ❗ ОБЯЗАТЕЛЬНО ДЛЯ GITHUB PAGES
-  base: "/web-html1-barbershop/",
+  return {
+    root: "src",
 
-  build: {
-    outDir: "../dist",
-    emptyOutDir: true,
-  },
+    // автоматически берём base из .env.production
+    base: env.VITE_BASE || "/",
 
-  plugins: [
-    svgSprite({
-      include: "icons/**/*.svg",
-      symbolId: (file) => "icon-" + file.name,
-    }),
+    build: {
+      outDir: "../dist",
+      emptyOutDir: true,
+    },
 
-    ViteImageOptimizer({
-      png: { quality: 80 },
-      jpeg: { quality: 80 },
-      webp: { quality: 80 },
-    }),
-  ],
+    plugins: [
+      svgSprite({
+        include: "icons/**/*.svg",
+        symbolId: (file) => "icon-" + file.name,
+      }),
+
+      ViteImageOptimizer({
+        png: { quality: 80 },
+        jpeg: { quality: 80 },
+        webp: { quality: 80 },
+      }),
+    ],
+  };
 });
