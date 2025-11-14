@@ -5,6 +5,9 @@ import svgSprite from "vite-plugin-svg-sprite";
 export default defineConfig({
   root: "src",
 
+  // ❗ ОБЯЗАТЕЛЬНО ДЛЯ GITHUB PAGES
+  base: "/web-html1-barbershop/",
+
   build: {
     outDir: "../dist",
     emptyOutDir: true,
@@ -13,13 +16,13 @@ export default defineConfig({
   plugins: [
     svgSprite({
       include: "icons/**/*.svg",
-      symbolId: file => "icon-" + file.name,
+      symbolId: (file) => "icon-" + file.name,
     }),
 
     ViteImageOptimizer({
       png: { quality: 80 },
       jpeg: { quality: 80 },
-      webp: { quality: 80 }
+      webp: { quality: 80 },
     }),
   ],
 });
